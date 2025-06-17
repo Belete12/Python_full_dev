@@ -29,7 +29,7 @@ def decrypt(original_text, shift_amount):
     decrypt_word=""
     for letter in original_text:
        # print(alphabet.index(letter)) # this will print the letter index position
-        shifted_position = alphabet.index(letter) - shift_amount
+        shifted_position = alphabet.index(letter) - shift_amount  # /*or short */ shift_amount *= -1
         shifted_position= shifted_position % len(alphabet) # TODO-4: What happens if you try to shift z forwards by 9? Can you fix the code?
         decrypt_word += alphabet[shifted_position]
     print(f"Your secrete word is: {decrypt_word}")
@@ -42,6 +42,7 @@ def caesar():
         if direction=="encode":
             encrypt(original_text=text, shift_amount=shift)
         elif direction=="decode":
+
             decrypt(original_text=text,shift_amount=shift)
         else:
             print("Invalid.")
